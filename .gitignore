@@ -1,0 +1,33 @@
+# Node / Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env.local
+frontend/.env.*.local
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+# Python / AI Service
+ai-service/venv/
+ai-service/__pycache__/
+ai-service/*.py[cod]
+ai-service/*$py.class
+ai-service/.pytest_cache/
+ai-service/*.joblib
+
+# Java / Maven / Backend
+backend/target/
+backend/*.jar
+backend/*.war
+backend/.mvn/
+backend/.classpath
+backend/.project
+backend/.settings/
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
