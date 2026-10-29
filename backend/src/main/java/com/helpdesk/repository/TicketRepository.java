@@ -18,7 +18,7 @@ public interface TicketRepository extends JpaRepository<Ticket, String> {
     Page<Ticket> findByStatus(String status, Pageable pageable);
 
     @Query("SELECT t FROM Ticket t WHERE " +
-           "(:query IS NULL OR LOWER(t.id) LIKE LOWER(CONCAT('%', :query, '%')) OR LOWER(t.subject) LIKE LOWER(CONCAT('%', :query, '%')) OR LOWER(t.description) LIKE LOWER(CONCAT('%', :query, '%'))) AND " +
+           "(CAST(:query AS String) IS NULL OR LOWER(t.id) LIKE LOWER(CONCAT('%', CAST(:query AS String), '%')) OR LOWER(t.subject) LIKE LOWER(CONCAT('%', CAST(:query AS String), '%')) OR LOWER(t.description) LIKE LOWER(CONCAT('%', CAST(:query AS String), '%'))) AND " +
            "(:status IS NULL OR t.status = :status) AND " +
            "(:category IS NULL OR t.category = :category) AND " +
            "(:priority IS NULL OR t.priority = :priority)")
