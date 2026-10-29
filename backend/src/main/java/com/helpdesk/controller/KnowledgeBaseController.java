@@ -12,7 +12,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/kb")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "*")
 public class KnowledgeBaseController {
 
     private final KnowledgeBaseService kbService;
